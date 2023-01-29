@@ -1,10 +1,24 @@
-# Line-Follower
+# Line-Follower made by Vlaganii (Neacsu Vlad and Dinu Marinel Gabriel)
+
+## Project summary
+
+This project was made for the UniBuc Robotics class of 2022 - 2023.
+
+The class provided us with the physical components required to build this robot. We received a kit containing the 3D printed frame, the QTR-8A Sensor, the two wheels, a small ball breaing acting as the third wheel and screws. In addition to the kit we received LiPo batteries for powering the line-follower robot.
+
+The purpose of this project was to write a code that could help the line-follower robot finish an unkown track in under 20 seconds.
+
+## Code description
 
 This code is designed for a line-follower robot. 
 
-The setup() function initializes the serial communication, sets up the QTR Sensors, and calibrates the sensors with a loop that moves the robot left and right until it is calibrated. It then sets up an LED to indicate that calibration has been completed. 
+The setup() function initializes the serial communication, sets up the QTR-8A Sensor, and calibrates the sensors with a loop that moves the robot left and right until it is calibrated. It then sets up an LED to indicate that calibration has been completed. 
 
 The loop() function calls pidControl(), which reads in the sensor values, calculates an error value, and applies PID control to set motor speeds based on the error value. The setMotorSpeed() function takes in motor speeds in both directions and sets them accordingly by setting pins to high or low to allow current flow and writing analog values to enable pins.
+
+Regarding the PID function, the most important elements were P and D. P dealt with track curves in general and D dealt with the oscillations caused by P or other factors. I had a negligible effect.
+
+The PID function was desgined to work on different cases, meaning it assignes different values for P and D based on how tight a turn is.
 
 ## Components 
 
